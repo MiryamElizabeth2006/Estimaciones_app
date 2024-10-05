@@ -8,10 +8,10 @@ export class Estimacion{
   cliente!:Cliente
   requerimiento!: string;
   tiempo!:string;
-  roles!: Roles;
-  costosAdicionales!: CostosAdicionales;
+  roles!: Roles[];
+  costosAdicionales!: CostosAdicionales[];
   calculoCostoTotal!:CalculoCostoTotal;
   precioFinal!: number;
-  valorUtilidad!: string
+  valorUtilidad!: string;
 }
 
