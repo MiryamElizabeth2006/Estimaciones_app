@@ -1,0 +1,17 @@
+import { CalculoCostoTotal } from './CalculoCostoTotal';
+import { CostosAdicionales } from './CostosAdicionale';
+import { Roles } from './Roles';
+import { Direccion } from './Direccion';
+import { Cliente } from './Clienete';
+export class Estimacion{
+  cliente!:Cliente
+  direcccion!:Direccion
+  requerimiento!: string;
+  tiempo!:string;
+  roles!: Roles;
+  costosAdicionales!: CostosAdicionales;
+  calculoCostoTotal!:CalculoCostoTotal;
+  precioFinal!: number;
+  valorUtilidad!: string
+}
+
