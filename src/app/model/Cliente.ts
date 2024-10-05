@@ -1,7 +1,9 @@
+import { Direccion } from "./Direccion";
+
 export class Cliente{
   cedula!:string;
   nombreC!:string;
-  apellido!:string;
   celular!:number|string;
+  direccion!:Direccion;
 }
 

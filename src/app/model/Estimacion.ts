@@ -2,10 +2,10 @@ import { CalculoCostoTotal } from './CalculoCostoTotal';
 import { CostosAdicionales } from './CostosAdicionale';
 import { Roles } from './Roles';
 import { Direccion } from './Direccion';
-import { Cliente } from './Clienete';
+import { Cliente } from './Cliente';
+
 export class Estimacion{
   cliente!:Cliente
-  direcccion!:Direccion
   requerimiento!: string;
   tiempo!:string;
   roles!: Roles;
