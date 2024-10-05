@@ -1,32 +1,83 @@
-<div>
-    <h2>Estimación de Proyecto de Software</h2>
-    <div>
-        <h3>CLIENTE</h3>
-        <ul>
-            <li>Nombre:</li>
-            <li>Cédula:</li>
-            <li>Teléfono:</li>
-            <li>Dirección:</li>
-        </ul>
-
-        <div>
-            <h3>PROYECTO</h3>
-            <ul>
-                <li>Requerimientos:</li>
-                <li>Tiempo:</li>
-                <div>
-                    <h2>Roles</h2>
-                    <ul>
-                        <li>Rol:</li>
-                        <li>Sueldo:</li>
-                        <li>% Participación:</li>
+<div class="container">
+    <div class="text-center">
+        <h2>Estimación de Proyecto de Software</h2>
+    </div>
+    <div class="card my-5">
+        <div class="card-header text-center">
+            <h3>FACTURA</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="text-center">
+                    <h3>CLIENTE</h3>
+                </div>
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item">Nombre: {{estimaciones.cliente.nombreC}} </li>
+                        <li class="list-group-item">Cédula: {{estimaciones.cliente.cedula}}</li>
+                        <li class="list-group-item">Teléfono: {{estimaciones.cliente.celular}}</li>
+                        <li class="list-group-item">Dirección: {{estimaciones.cliente.direccion.ciudad}},
+                            {{estimaciones.cliente.direccion.pais}}</li>
                     </ul>
                 </div>
-                <li>Costos Adicionales:</li>
-                <li>Costo Total:</li>
-                <li>Valor de Utilidad:</li>
-                <li>Precio Final:</li>
-            </ul>
+
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item">Requerimientos: {{estimaciones.requerimiento}}</li>
+                        <li class="list-group-item">Tiempo: {{estimaciones.tiempo}}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
+    </div>
+    <div>
+        <div class="text-center">
+            <h3>PROYECTO</h3>
+        </div>
+        <div>
+            <h4>Roles</h4>
+            <table class="table table-dark table-striped">
+                <thead class="align-middle">
+                    <th scope="col">ROL</th>
+                    <th scope="col">% PARTICIPACION</th>
+                    <th scope="col">SUELDO</th>
+                </thead>
+                <tbody class="table-group-divider">
+                    @for (rol of estimaciones.roles; track $index) {
+                    <tr class="align-middle">
+                        <td>{{rol.nombreRol}}</td>
+                        <td>{{rol.participacion}}</td>
+                        <td>{{rol.sueldo}}</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <div>
+        <div>
+            <h4 class="align-middle">Costos Adicionales</h4>
+            <table class="table table-dark table-striped">
+                <thead>
+                    <th>Nombre del Costo</th>
+                    <th>Costo</th>
+                </thead>
+                <tbody>
+                    @for (costo of estimaciones.costosAdicionales; track $index) {
+                    <tr>
+                        <td>{{costo.nombreCosto}}</td>
+                        <td>{{costo.costo}}</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item">Costos Adicionales: ${{estimaciones.calculoCostoTotal.costosAdicionales}}</li>
+            <li class="list-group-item">Mano de Obra: ${{estimaciones.calculoCostoTotal.costoRoles}}</li>
+            <li class="list-group-item">Valor de Utilidad: ${{estimaciones.valorUtilidad}}</li>
+            <li class="list-group-item">Precio Final: ${{estimaciones.precioFinal}}</li>
+        </ul>
     </div>
 </div>
