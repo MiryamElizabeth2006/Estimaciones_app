@@ -1,4 +1,3 @@
-import { CostosAdicionales } from "../model/CostosAdicionale";
 import { Estimacion } from "../model/Estimacion";
 
 export const Data: Estimacion = {
